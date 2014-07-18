@@ -1,6 +1,6 @@
-package com.mkyong.android.adaptor;
+package ge.ufc.atm.adaptor;
 
-import com.mkyong.android.R;
+import ge.ufc.atm.R;
 
 import android.content.Context;
 import android.view.LayoutInflater;

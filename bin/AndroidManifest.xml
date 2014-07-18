@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mkyong.android"
+    package="ge.ufc.atm"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -10,14 +10,23 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name" >
         <activity
-            android:label="@string/app_name"
-            android:name=".ListAtmActivity" >
-            <intent-filter >
+            android:name="ge.ufc.atm.ListAtmActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
+    
+    <application>
+        <activity android:name="com.example.android.tictactoe.library.GameActivity" />
+    </application>
 
+    <application>
+            <meta-data android:name="com.google.android.gms.version"
+        android:value="@integer/google_play_services_version" />
+    </application>
+    
 </manifest>

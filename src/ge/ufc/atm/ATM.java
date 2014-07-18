@@ -1,4 +1,4 @@
-package com.mkyong.android;
+package ge.ufc.atm;
 
 public class ATM {
 	private Bank bank;
