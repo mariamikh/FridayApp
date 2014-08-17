@@ -1,5 +1,6 @@
 package ge.ufc.atm.adaptor;
 
+import ge.ufc.atm.ATM;
 import ge.ufc.atm.R;
 
 import android.content.Context;
@@ -10,11 +11,11 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class AtmArrayAdapter extends ArrayAdapter<String> {
+public class AtmArrayAdapter extends ArrayAdapter<ATM> {
 	private final Context context;
-	private final String[] values;
+	private final ATM[] values;
 
-	public AtmArrayAdapter(Context context, String[] values) {
+	public AtmArrayAdapter(Context context, ATM[] values) {
 		super(context, R.layout.list_atm, values);
 		this.context = context;
 		this.values = values;
@@ -26,24 +27,16 @@ public class AtmArrayAdapter extends ArrayAdapter<String> {
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
 		View rowView = inflater.inflate(R.layout.list_atm, parent, false);
-		TextView textView = (TextView) rowView.findViewById(R.id.label);
-		ImageView imageView = (ImageView) rowView.findViewById(R.id.logo);
-		textView.setText(values[position]);
+		TextView txAtmAddress = (TextView) rowView.findViewById(R.id.lb_address);
+		TextView txBankName = (TextView) rowView
+				.findViewById(R.id.lb_bank_name);
+		TextView txDistance = (TextView) rowView.findViewById(R.id.lb_distance);
 
-		// Change icon based on name
-		String s = values[position];
+		System.out.println(values[position]);
 
-		System.out.println(s);
-
-		if (s.equals("WindowsMobile")) {
-			imageView.setImageResource(R.drawable.tbc);
-		} else if (s.equals("iOS")) {
-			imageView.setImageResource(R.drawable.vtb);
-		} else if (s.equals("Blackberry")) {
-			imageView.setImageResource(R.drawable.hbg);
-		} else {
-			imageView.setImageResource(R.drawable.cns);
-		}
+		txAtmAddress.setText(values[position].getAddress());
+		txBankName.setText(values[position].getBank().getBank());
+		txDistance.setText(String.valueOf(values[position].getDistance()));
 
 		return rowView;
 	}

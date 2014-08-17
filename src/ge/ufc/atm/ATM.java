@@ -5,6 +5,15 @@ public class ATM {
 	private float latitude;
 	private float longitude;
 	private String address;
+	private float distance;
+
+	public ATM(Bank bank, float latitude, float longitude, String address, float distance) {
+		this.bank = bank;
+		this.latitude = latitude;
+		this.longitude = longitude;
+		this.address = address;
+		this.setDistance(distance);
+	}
 
 	public Bank getBank() {
 		return bank;
@@ -36,6 +45,14 @@ public class ATM {
 
 	public void setAddress(String address) {
 		this.address = address;
+	}
+
+	public float getDistance() {
+		return distance;
+	}
+
+	public void setDistance(float distance) {
+		this.distance = distance;
 	}
 
 }
